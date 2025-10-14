@@ -36,3 +36,4 @@ if __name__ == "__main__":
     video_path = r"C:\Users\jjesu\OneDrive\Escritorio\escritorio\FORMACION\GCID\Segundo\FSI\Primera_practica\autopista.mp4"
     bg = OnlyBackGround(video_path)
     bg.chargevideo()
+# fsafsadfsasdfas

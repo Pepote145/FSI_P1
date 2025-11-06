@@ -11,7 +11,7 @@ class OnlyBackGround:
 
         # Comprobamos si el video se pudo abrir
         if not cap.isOpened():
-            print("❌ ERROR: No se pudo abrir el video. Revisa la ruta del archivo.")
+            print("ERROR: No se pudo abrir el video. Revisa la ruta del archivo.")
             return
 
         frames = []

@@ -8,6 +8,12 @@ class OnlyBackGround:
 
     def chargevideo(self):
         cap = cv2.VideoCapture(self.video)
+
+        # Comprobamos si el video se pudo abrir
+        if not cap.isOpened():
+            print("❌ ERROR: No se pudo abrir el video. Revisa la ruta del archivo.")
+            return
+
         frames = []
         count = 0
 
@@ -22,6 +28,10 @@ class OnlyBackGround:
         cap.release()
         print(f"Frames cargados: {count}")
 
+        if count == 0:
+            print("⚠️ No se leyeron frames. Posiblemente el video esté vacío o la ruta sea incorrecta.")
+            return
+
         # Convertir lista a array y calcular el fondo
         frames = np.array(frames, dtype=np.uint8)
         self.background = np.median(frames, axis=0).astype(np.uint8)
@@ -32,8 +42,9 @@ class OnlyBackGround:
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
+
 if __name__ == "__main__":
-    video_path = r"C:\Users\jjesu\OneDrive\Escritorio\escritorio\FORMACION\GCID\Segundo\FSI\Primera_practica\autopista.mp4"
+    # Ruta relativa correcta
+    video_path = "Primera_practica/autopista.mp4"
     bg = OnlyBackGround(video_path)
     bg.chargevideo()
-# fsafsadfsasdfas

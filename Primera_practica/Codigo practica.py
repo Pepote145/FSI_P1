@@ -24,7 +24,7 @@ class OnlyBackGround:
                 break
 
             frames.append(frame)
-            count += 1
+
 
         cap.release()
         print(f"Frames cargados: {count}")
